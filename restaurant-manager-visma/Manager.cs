@@ -12,15 +12,24 @@ namespace restaurant_manager_visma
         private Menu menu { get; set; }
         private Orders orders { get; set; }
 
-        // for product stock temp variable creation
         private string productStockFile { get; set; }
+        private string menuFile { get; set; }
+        private string ordersFile { get; set; }
 
         public Manager(string productStockFile, string menuFile, string ordersFile)
         {
-            productStock = new ProductStock(productStockFile);
-            menu = new Menu(menuFile);
-            orders = new Orders(ordersFile);
+            productStock = new ProductStock();
+            productStock.getDataFromFile(productStockFile);
+
+            menu = new Menu();
+            menu.getDataFromFile(menuFile);
+
+            orders = new Orders();
+            orders.getDataFromFile(ordersFile);
+
             this.productStockFile = productStockFile;
+            this.menuFile = menuFile;
+            this.ordersFile = ordersFile;
         }
 
         public int getInputNumber()
@@ -127,7 +136,7 @@ namespace restaurant_manager_visma
                 if (portionCount >= 0 && portionSize >= 0)
                 {
                     this.productStock.addToStock(product);
-                    this.productStock.updateDataFile();
+                    this.productStock.updateDataFile(this.productStockFile);
                     Console.WriteLine("Product has been added successfully");
                     Console.ReadKey();
                 }
@@ -163,7 +172,7 @@ namespace restaurant_manager_visma
                 if (this.productStock.isAvailable(id) && stock >= 0)
                 {
                     this.productStock.updateStock(id, stock);
-                    this.productStock.updateDataFile();
+                    this.productStock.updateDataFile(this.productStockFile);
                     Console.WriteLine("Stock has been updated successfully");
                     Console.ReadKey();
                 }
@@ -194,7 +203,7 @@ namespace restaurant_manager_visma
                 if (this.productStock.isAvailable(id))
                 {
                     this.productStock.removeStock(id);
-                    this.productStock.updateDataFile();
+                    this.productStock.updateDataFile(this.productStockFile);
                     Console.WriteLine("Stock has been deleted successfully");
                     Console.ReadKey();
                 }
@@ -242,7 +251,7 @@ namespace restaurant_manager_visma
                     createMenuItemPage();
                     break;
                 case 2:
-                    updateMenuPage();
+                    updateMenuItemPage();
                     break;
                 case 3:
                     removeMenuItemPage();
@@ -297,7 +306,7 @@ namespace restaurant_manager_visma
                 if (productIds.Count > 0)
                 {
                     this.menu.addMenuItem(menuItem);
-                    this.menu.updateDataFile();
+                    this.menu.updateDataFile(this.menuFile);
                     Console.WriteLine("Menu item has been added successfully");
                     Console.ReadKey();
                 }
@@ -316,7 +325,7 @@ namespace restaurant_manager_visma
             menuPage();
         }
 
-        public void updateMenuPage()
+        public void updateMenuItemPage()
         {
             Console.Clear();
             this.menu.printMenu();
@@ -326,25 +335,43 @@ namespace restaurant_manager_visma
                 Console.Write("\nID: ");
                 int id = getInputNumber();
 
-                Console.Write("Stock: ");
-                int stock = getInputNumber();
-
-                if (this.productStock.isAvailable(id) && stock >= 0)
+             
+                if (this.menu.isAvailable(id))
                 {
-                    this.productStock.updateStock(id, stock);
-                    this.menu.updateDataFile();
-                    Console.WriteLine("Stock has been updated successfully");
+                    Console.Write("Name: ");
+                    var name = Console.ReadLine();
+
+                    Console.Write("Products: ");
+                    var productIdsString = Console.ReadLine();
+                    var productIds = productIdsString.Split(' ').Select(Int32.Parse).ToList();
+
+                    // check if all given products are available in the stock list
+                    foreach (var productId in productIds)
+                    {
+                        if (this.productStock.isAvailable(productId) == false)
+                        {
+                            Console.WriteLine("Products are not available!");
+                            Console.ReadKey();
+                            menuPage();
+                        }
+                    }
+
+                    this.menu.updateName(id, name);
+                    this.menu.updateProducts(id, productIds);
+
+
+                    Console.WriteLine("Menu item has been updated successfully");
                     Console.ReadKey();
                 }
                 else
                 {
-                    Console.WriteLine("Check ID or stock");
+                    Console.WriteLine("Check ID");
                     Console.ReadKey();
                 }
             }
             catch
             {
-                Console.WriteLine("Error while updating stock!");
+                Console.WriteLine("Error while updating menu item!");
                 Console.ReadKey();
             }
             menuPage();
@@ -362,7 +389,7 @@ namespace restaurant_manager_visma
                 if (this.menu.isAvailable(id))
                 {
                     this.menu.removeMenuItem(id);
-                    this.menu.updateDataFile();
+                    this.menu.updateDataFile(this.menuFile);
                     Console.WriteLine("Menu item has been deleted successfully");
                     Console.ReadKey();
                 }
@@ -414,7 +441,7 @@ namespace restaurant_manager_visma
                     mainPage();
                     break;
                 case 9:
-                    return;
+                    break;
                 default:
                     orderPage();
                     break;
@@ -440,7 +467,8 @@ namespace restaurant_manager_visma
                 // deduct each product
                 // if product stock is not below 0 
                 // this.productStock = tempProductStock
-                var tempProductStock = new ProductStock(this.productStockFile);
+                var tempProductStock = new ProductStock();
+                tempProductStock.getDataFromFile(this.productStockFile);
                 // check if all given menu items are available in the menu
                 foreach (var menuId in menuIds)
                 {
@@ -474,12 +502,12 @@ namespace restaurant_manager_visma
                 {
                     // replace original productStock list with list with deducted values
                     this.productStock = tempProductStock;
-                    this.productStock.updateDataFile();
+                    this.productStock.updateDataFile(this.productStockFile);
 
                     var orderItem = new OrderItem(id, DateTime.Now, menuIds);
 
                     this.orders.createOrder(orderItem);
-                    this.orders.updateDataFile();
+                    this.orders.updateDataFile(this.ordersFile);
                     Console.WriteLine("Order has been created successfully");
                     Console.ReadKey();
                 }

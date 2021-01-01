@@ -10,15 +10,13 @@ using System.Threading.Tasks;
 
 namespace restaurant_manager_visma
 {
-    class Menu
+    public class Menu
     {
         private List<MenuItem> menuItems { get; set; }
-        private string menuFile { get; set; }
 
-        public Menu(string menuFile)
+        public Menu()
         {
-            this.menuFile = menuFile;
-            getDataFromFile();
+            this.menuItems = new List<MenuItem>();
         }
         public int newID()
         {
@@ -64,7 +62,7 @@ namespace restaurant_manager_visma
             }
         }
 
-        public void getDataFromFile()
+        public void getDataFromFile(string menuFile)
         {
             // find data file 
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
@@ -89,7 +87,7 @@ namespace restaurant_manager_visma
             }
         }
 
-        public void updateDataFile()
+        public void updateDataFile(string menuFile)
         {
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
             string path = Path.GetDirectoryName(thisFile);

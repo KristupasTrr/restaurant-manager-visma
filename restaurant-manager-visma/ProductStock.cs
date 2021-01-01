@@ -10,15 +10,13 @@ using CsvHelper;
 
 namespace restaurant_manager_visma
 {
-    class ProductStock
+    public class ProductStock
     {
         private List<Product> itemsInStock { get; set; }
-        private string stockFile { get; set; }
 
-        public ProductStock(string stockFile)
+        public ProductStock()
         {
-            this.stockFile = stockFile;
-            getDataFromFile();
+            itemsInStock = new List<Product>();
         }
         public int newID()
         {
@@ -70,40 +68,42 @@ namespace restaurant_manager_visma
             }
         }
 
-        public void updateDataFile()
+        public void updateDataFile(string stockFile)
         {
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
             string path = Path.GetDirectoryName(thisFile);
             path += "\\data\\" + stockFile;
 
-            if (File.Exists(path))
-            {
-                using (var writer = new StreamWriter(path))
-                using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csvWriter.Configuration.Delimiter = ";";
 
-                    csvWriter.WriteRecords(itemsInStock);
-
-                }
-            }
-            else
+            using (var writer = new StreamWriter(path))
+            using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
-                this.itemsInStock = new List<Product>();
+                csvWriter.Configuration.Delimiter = ";";
+
+                csvWriter.WriteRecords(itemsInStock);
+
             }
+
         }
-        public void getDataFromFile()
+        public void getDataFromFile(string stockFile)
         {
             // find data file 
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
             string path = Path.GetDirectoryName(thisFile);
             path += "\\data\\" + stockFile;
 
-            using (var reader = new StreamReader(path))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            if (File.Exists(path))
             {
-                csv.Configuration.Delimiter = ";";
-                itemsInStock = csv.GetRecords<Product>().ToList();
+                using (var reader = new StreamReader(path))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Configuration.Delimiter = ";";
+                    itemsInStock = csv.GetRecords<Product>().ToList();
+                }
+            }
+            else
+            {
+                this.itemsInStock = new List<Product>();
             }
         }
     }

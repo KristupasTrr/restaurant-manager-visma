@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 
 namespace restaurant_manager_visma
 {
-    class Orders
+    public class Orders
     {
         private List<OrderItem> orders { get; set; }
-        private string orderFile { get; set; }
-        public Orders(string orderFile)
+        public Orders()
         {
-            this.orderFile = orderFile;
-            getDataFromFile();
+            this.orders = new List<OrderItem>();
         }
         public int newID()
         {
@@ -31,6 +29,11 @@ namespace restaurant_manager_visma
             this.orders.Add(order);
         }
 
+        public int getOrderCount()
+        {
+            return this.orders.Count;
+        }
+
         public void printOrders()
         {
             var header = String.Format("{0,-3} | {1,-25} | {2, -13} ", "ID", "Date", "Menu Items");
@@ -42,7 +45,7 @@ namespace restaurant_manager_visma
             }
         }
 
-        public void getDataFromFile()
+        public void getDataFromFile(string orderFile)
         {
             // find data file 
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
@@ -67,7 +70,7 @@ namespace restaurant_manager_visma
             }
         }
 
-        public void updateDataFile()
+        public void updateDataFile(string orderFile)
         {
             string thisFile = new System.Diagnostics.StackTrace(true).GetFrame(0).GetFileName();
             string path = Path.GetDirectoryName(thisFile);
