@@ -52,7 +52,6 @@
     <Compile Include="MenuTests.cs" />
     <Compile Include="OrdersTests.cs" />
     <Compile Include="ProductStockTests.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
