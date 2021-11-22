@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using restaurant_manager_visma;
 
-namespace restaurant_manager_visma.Tests
+namespace restaurant_manager_tests
 {
     [TestClass()]
     public class MenuTests
