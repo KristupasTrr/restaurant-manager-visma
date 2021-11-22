@@ -35,9 +35,18 @@ namespace restaurant_manager_visma
             return itemsInStock.Find(x => x.id == id).portionCount;
         }
 
-        public void updateStock(int id, int newStock)
+        public int updateStock(int id, int newStock)
         {
-            var item = itemsInStock.Find(x => x.id == id).portionCount = newStock;
+            var product = itemsInStock.FirstOrDefault(x => x.id == id);
+
+            if (product is null || newStock < 0)
+            {
+                return -1;
+            }
+
+            product.portionCount = newStock;
+
+            return product.portionCount;
         }
 
         public void removeStock(int id)
@@ -105,6 +114,11 @@ namespace restaurant_manager_visma
             {
                 this.itemsInStock = new List<Product>();
             }
+        }
+
+        public Product getProduct(int id)
+        {
+            return itemsInStock.FirstOrDefault(x => x.id == id);
         }
     }
 }
