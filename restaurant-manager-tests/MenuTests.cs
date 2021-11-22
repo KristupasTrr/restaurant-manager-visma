@@ -69,15 +69,18 @@ namespace restaurant_manager_tests
             Assert.IsFalse(available);
         }
 
-        [TestMethod()]
-        public void addMenuItem_Valid_Test()
+        [DataTestMethod]
+        [DataRow(new int[] { 1, 2 }, 2, true)]
+        [DataRow(new int[] { 3, 6 }, 4, false)]
+        [DataRow(new int[] { 1, 2, 3 }, 5, false)]
+        public void addMenuItem_Valid_Test(int[] item_ids, int id, bool expected)
         {
-            var testMenuItem = new MenuItem(2, "menuItem2", new List<int> { 1, 2 });
+            var testMenuItem = new MenuItem(2, "menuItem2", new List<int> (item_ids));
             menuItems.addMenuItem(testMenuItem);
 
-            var available = menuItems.isAvailable(2);
+            var available = menuItems.isAvailable(id);
 
-            Assert.IsTrue(available);
+            Assert.AreEqual(available, expected);
         }
         
         [TestMethod()]
