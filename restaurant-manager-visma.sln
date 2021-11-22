@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restaurant-manager-visma", "restaurant-manager-visma\restaurant-manager-visma.csproj", "{D4F78385-B09D-4401-95F0-298D0BBEB0BE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{25D6BF3C-5F28-464A-80D8-C626D85FCD7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restaurant-manager-tests", "restaurant-manager-tests\restaurant-manager-tests.csproj", "{D914DB35-AA8B-4917-91E2-04BB10C24A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "restaurant-manager-visma.TestsGenerated", "restaurant-manager-visma.TestsGenerated\restaurant-manager-visma.TestsGenerated.csproj", "{004DACC2-4260-4D3F-ACB8-738AE09D1150}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{D914DB35-AA8B-4917-91E2-04BB10C24A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D914DB35-AA8B-4917-91E2-04BB10C24A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D914DB35-AA8B-4917-91E2-04BB10C24A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004DACC2-4260-4D3F-ACB8-738AE09D1150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004DACC2-4260-4D3F-ACB8-738AE09D1150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004DACC2-4260-4D3F-ACB8-738AE09D1150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004DACC2-4260-4D3F-ACB8-738AE09D1150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D4F78385-B09D-4401-95F0-298D0BBEB0BE} = {C425D434-4EED-44DB-8431-59991A582B3B}
 		{D914DB35-AA8B-4917-91E2-04BB10C24A7E} = {25D6BF3C-5F28-464A-80D8-C626D85FCD7C}
+		{004DACC2-4260-4D3F-ACB8-738AE09D1150} = {25D6BF3C-5F28-464A-80D8-C626D85FCD7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311CAE5F-3402-4567-A0AF-CCD41DCA410D}

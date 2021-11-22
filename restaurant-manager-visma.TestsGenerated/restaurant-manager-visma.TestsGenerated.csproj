@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{004DACC2-4260-4D3F-ACB8-738AE09D1150}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>restaurant_manager_visma.TestsGenerated</RootNamespace>
+    <AssemblyName>restaurant-manager-visma.TestsGenerated</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=19.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\restaurant-manager-visma\bin\Debug\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Pex.Framework, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\restaurant-manager-visma\restaurant-manager-visma.csproj">
+      <Project>{D4F78385-B09D-4401-95F0-298D0BBEB0BE}</Project>
+      <Name>restaurant-manager-visma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManagerTest.ConstructorTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.createMenuItemPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.createOrderPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.createProductPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.cs" />
+    <Compile Include="ManagerTest.getInputNumberTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.mainPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.menuPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.orderPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.printMenuPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.printOrdersPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.printStockPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.productStockPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.removeMenuItemPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.removeStockPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.updateMenuItemPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTest.updateStockPageTest.g.cs">
+      <DependentUpon>ManagerTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItemTest.ConstructorTest.g.cs">
+      <DependentUpon>MenuItemTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItemTest.cs" />
+    <Compile Include="MenuTest.addMenuItemTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.ConstructorTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.cs" />
+    <Compile Include="MenuTest.getDataFromFileTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.getMenuListItemTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.isAvailableTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.newIDTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.printMenuTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.removeMenuItemTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.updateDataFileTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.updateNameTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTest.updateProductsTest.g.cs">
+      <DependentUpon>MenuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemTest.ConstructorTest.g.cs">
+      <DependentUpon>OrderItemTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItemTest.cs" />
+    <Compile Include="OrdersTest.ConstructorTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.createOrderTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.cs" />
+    <Compile Include="OrdersTest.getDataFromFileTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.getOrderCountTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.newIDTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.printOrdersTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersTest.updateDataFileTest.g.cs">
+      <DependentUpon>OrdersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.addToStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.ConstructorTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.cs" />
+    <Compile Include="ProductStockTest.deductStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.getDataFromFileTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.getStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.isAvailableTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.newIDTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.printStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.removeStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.updateDataFileTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockTest.updateStockTest.g.cs">
+      <DependentUpon>ProductStockTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTest.ConstructorTest.g.cs">
+      <DependentUpon>ProductTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTest.cs" />
+    <Compile Include="ProgramTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PexAssemblyInfo.cs" />
+    <Compile Include="ToIntArrayConverterTest.ConvertFromStringTest.g.cs">
+      <DependentUpon>ToIntArrayConverterTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToIntArrayConverterTest.ConvertToStringTest.g.cs">
+      <DependentUpon>ToIntArrayConverterTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToIntArrayConverterTest.cs" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

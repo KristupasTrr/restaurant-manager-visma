@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\restaurant-manager-visma.TestsGenerated\restaurant-manager-visma.TestsGenerated.csproj">
+      <Project>{004dacc2-4260-4d3f-acb8-738ae09d1150}</Project>
+      <Name>restaurant-manager-visma.TestsGenerated</Name>
+    </ProjectReference>
     <ProjectReference Include="..\restaurant-manager-visma\restaurant-manager-visma.csproj">
       <Project>{D4F78385-B09D-4401-95F0-298D0BBEB0BE}</Project>
       <Name>restaurant-manager-visma</Name>
