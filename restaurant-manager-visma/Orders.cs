@@ -28,6 +28,36 @@ namespace restaurant_manager_visma
         {
             this.orders.Add(order);
         }
+        public void deleteOrder(OrderItem order)
+        {
+            this.orders.Remove(order);
+        }
+        public OrderItem returnOrder(int id)
+        {
+            var index = this.orders.FindIndex(x => x.id == id);
+            if (index != -1)
+            {
+                return this.orders[index];
+            }
+            return null;
+        }
+        public void editOrder(int id, List<int> menuItems)
+        {
+            var index = this.orders.FindIndex(x => x.id == id);
+            if(index != -1)
+            {
+                this.orders[index].menuItems = menuItems;
+            }
+        }
+        public List<int> returnMenuItems(int id)
+        {
+            var index = this.orders.FindIndex(x => x.id == id);
+            if (index != -1)
+            {
+                return this.orders[index].menuItems;
+            }
+            return null;
+        }
 
         public int getOrderCount()
         {
