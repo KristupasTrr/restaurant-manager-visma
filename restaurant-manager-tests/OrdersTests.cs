@@ -71,6 +71,77 @@ namespace restaurant_manager_tests
 
             Assert.AreEqual(expected, count);
         }
+        [TestMethod()]
+        public void deleteOrderTest()
+        {
+            var orderItem = new OrderItem(1, DateTime.Now, new List<int> { 1 });
+            orders.createOrder(orderItem);
+            orders.deleteOrder(orderItem);
+            var expected = 0;
 
+            var count = orders.getOrderCount();
+
+            Assert.AreEqual(expected, count);
+        }
+        [TestMethod()]
+        public void deleteOrder_WhenEmpty_Test()
+        {
+            var orderItem = new OrderItem(1, DateTime.Now, new List<int> { 1 });
+            orders.deleteOrder(orderItem);
+            var expected = 0;
+
+            var count = orders.getOrderCount();
+
+            Assert.AreEqual(expected, count);
+        }
+        [TestMethod()]
+        public void ReturnOrderTest()
+        {
+            var orderItem1 = new OrderItem(1, DateTime.Now, new List<int> { 1 });
+            var orderItem2 = new OrderItem(2, DateTime.Now, new List<int> { 2 });
+            var orderItem3 = new OrderItem(3, DateTime.Now, new List<int> { 3 });
+            orders.createOrder(orderItem1);
+            orders.createOrder(orderItem2);
+            orders.createOrder(orderItem3);
+
+            Assert.AreEqual(orderItem2, orders.returnOrder(2));
+        }
+        [TestMethod()]
+        public void ReturnOrder_WhenEmpty_Test()
+        {
+            Assert.AreEqual(null, orders.returnOrder(1));
+        }
+        [TestMethod()]
+        public void ReturnMenuItemsOrderTest()
+        {
+            var orderItem = new OrderItem(1, DateTime.Now, new List<int> { 1 });
+            orders.createOrder(orderItem);
+
+            var expected = new List<int> { 1 };
+
+            Assert.AreEqual(expected[0], orders.returnMenuItems(1)[0]);
+        }
+        [TestMethod()]
+        public void ReturnMenuItems_WhenEmpty_Test()
+        {
+            Assert.AreEqual(null, orders.returnMenuItems(1));
+        }
+        [TestMethod()]
+        public void editOrderTest()
+        {
+            var orderItem = new OrderItem(1, DateTime.Now, new List<int> { 1 });
+            orders.createOrder(orderItem);
+            orders.editOrder(1, new List<int> { 2 });
+
+            var expected = new List<int> { 2 };
+
+            Assert.AreEqual(expected[0], orders.returnMenuItems(1)[0]);
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            Console.WriteLine("Cleanup executed. For showing ");
+        }
     }
 }
